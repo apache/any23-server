@@ -46,3 +46,21 @@ From this directory it generates roughly the following...
 ```
 
 Specific README's for each of the artifacts can be found in either ./target/*.tar.gz || ./target/*.zip (annotated above with '<<<'), where much more detailed information sources can be located.
+
+# Docker
+It may be more convenient if you use [Docker](https://www.docker.com/) for packaging and running the Any23 server.
+
+## Build the image
+```
+$ docker build -t tomcat .
+```
+
+## Run the image
+```
+$ docker run -d -p 8080:8080 --name tomcat tomcat
+```
+
+## Hot deploy Any23 webapp (war)
+```
+$ docker cp target/apache-any23-service-2.4-SNAPSHOT.war tomcat:/usr/local/tomcat/webapps/apache-any23-service-2.4-SNAPSHOT.war
+```
