@@ -318,6 +318,130 @@
       <groupId>org.apache.any23</groupId>
       <artifactId>apache-any23-core</artifactId>
       <version>${project.version}</version>
+      <exclusions>
+        <!-- Any23 brings in a lot of dependencies which bloats the sharded jar.
+             This is an attempt to reduce this by excluding packages
+             that we may not be using as part of Any23.
+             NOTE: If dependency is required at runtime, then a
+             java.lang.NoClassDefFoundError is thrown.  -->
+
+        <exclusion>
+          <groupId>org.apache.tika</groupId>
+          <artifactId>tika-parsers</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.bouncycastle</groupId>
+          <artifactId>bcmail-jdk15on</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.bouncycastle</groupId>
+          <artifactId>bcprov-jdk15on</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>edu.ucar</groupId>
+          <artifactId>cdm</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>net.sf.trove4j</groupId>
+          <artifactId>trove4j</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.cxf</groupId>
+          <artifactId>cxf-rt-rs-client</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.github.ben-manes.caffeine</groupId>
+          <artifactId>caffeine</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.opengis</groupId>
+          <artifactId>geoapi</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.drewnoakes</groupId>
+          <artifactId>metadata-extractor</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.eclipse.rdf4j</groupId>
+          <artifactId>rdf4j-repository-sail</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.eclipse.rdf4j</groupId>
+          <artifactId>rdf4j-sail-memory</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.tukaani</groupId>
+          <artifactId>xz</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.codelibs</groupId>
+          <artifactId>jhighlight</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.gagravarr</groupId>
+          <artifactId>vorbis-java-core</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.gagravarr</groupId>
+          <artifactId>vorbis-java-tika</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.opennlp</groupId>
+          <artifactId>opennlp-tools</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.pdfbox</groupId>
+          <artifactId>pdfbox</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.pdfbox</groupId>
+          <artifactId>pdfbox-tools</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.poi</groupId>
+          <artifactId>poi-scratchpad</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>edu.ucar</groupId>
+          <artifactId>grib</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.googlecode.mp4parser</groupId>
+          <artifactId>isoparser</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.healthmarketscience.jackcess</groupId>
+          <artifactId>jackcess</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.healthmarketscience.jackcess</groupId>
+          <artifactId>jackcess-encrypt</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.sis.core</groupId>
+          <artifactId>sis-utility</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.sis.storage</groupId>
+          <artifactId>sis-netcdf</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.sis.core</groupId>
+          <artifactId>sis-metadata</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.eclipse.rdf4j</groupId>
+          <artifactId>rdf4j-rio-trix</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.yaml</groupId>
+          <artifactId>snakeyaml</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.eclipse.rdf4j</groupId>
+          <artifactId>rdf4j-rio-turtle</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.apache.any23.plugins</groupId>
